@@ -9,7 +9,7 @@ The mailan-spider app will be distributed as a docker image.
 
 Assuming you have docker installed and configured, run this command to download the image and launch a new container running the spider crawler.
 ```bash
-$ docker run -it -p 8080:8080 iammai/mailan-spider
+$ docker run -it -p 8080:8080 ssaberi/ssaberi-spider
 ```
 
 Once the image is downloaded and your container is running, run this command to schedule a spider crawl job
