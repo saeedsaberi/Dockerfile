@@ -4,22 +4,20 @@ from scrapy.crawler import Crawler
 from scrapy.linkextractors import LinkExtractor
 from scrapy.spiders import CrawlSpider, Rule
 from scrapy.utils.project import get_project_settings
-from ..items import ImagescraperItem
+from items import ImagescraperItem
 import numpy as np
 # from scrapy.contrib.spiders import CrawlSpider, Rule
 
 
 class ImageCrawlSpiderSpider( CrawlSpider ):  ##scrapy.Spider ##CrawlSpider
     name = "image_crawl_spider"
-    # URLs = [l.strip('"').strip('[').strip(']').split(',') for l in open('urls.txt').readlines()]
+    """
+    This spider will try to crawl whatever is passed in `start_urls` which
+    should be a comma-separated or be inside a '[]'' string of fully qualified URIs.
+    """
+    def __init__(self, name=None, *args,  **kwargs):
+            super(ImageCrawlSpiderSpider, self).__init__(name,*args, **kwargs)
 
-    def __init__(self, *args, 
-        threads =1, **kwargs):
-            super(ImageCrawlSpiderSpider, self).__init__(*args, **kwargs)
-            super().__init__(*args, **kwargs)
-
-            # self.crawler.engine.downloader.total_concurrency = threads
-            # engine.downloader.total_concurrency = threads
             self.URLs = kwargs.pop('start_urls').strip('"').strip('[').strip(']').split(',') 
             print('These are the input URLs',self.URLs )
             self.threads = np.int( kwargs.pop('threads') )
@@ -27,10 +25,8 @@ class ImageCrawlSpiderSpider( CrawlSpider ):  ##scrapy.Spider ##CrawlSpider
         for url in self.URLs :
             yield scrapy.Request(url=url, 
                 callback=self.parse_image,
-                dont_filter=True) #, self.parse_image)
+                dont_filter=True) 
 
-    # rules = (Rule( #LinkExtractor(allow=r""),
-    #                  callback="parse_image", follow=True),)
     rules = (Rule(LinkExtractor(allow=()), callback='parse_image', follow=True),)
 
     def parse_image(self, response):
