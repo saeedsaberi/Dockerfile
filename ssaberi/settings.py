@@ -7,7 +7,7 @@
 #     https://docs.scrapy.org/en/latest/topics/downloader-middleware.html
 #     https://docs.scrapy.org/en/latest/topics/spider-middleware.html
 
-BOT_NAME = "imagescraper"
+BOT_NAME = "image_crawl_spider"
 
 SPIDER_MODULES = ["ssaberi.spiders"]
 NEWSPIDER_MODULE = "ssaberi.spiders"
