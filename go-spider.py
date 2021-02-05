@@ -2,7 +2,7 @@
 from scrapy.crawler import CrawlerProcess
 from scrapy.utils.project import get_project_settings
 
-from Docker.spiders.image_crawl_spider import ImageCrawlSpiderSpider
+from ssaberi.spiders.image_crawl_spider import ImageCrawlSpiderSpider
 
 
 process = CrawlerProcess(get_project_settings())
