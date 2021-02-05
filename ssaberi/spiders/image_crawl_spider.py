@@ -17,10 +17,11 @@ class ImageCrawlSpiderSpider( CrawlSpider ):  ##scrapy.Spider ##CrawlSpider
     """
     def __init__(self, name=None, *args,  **kwargs):
             super(ImageCrawlSpiderSpider, self).__init__(name,*args, **kwargs)
-
-            self.URLs = kwargs.pop('start_urls').strip('"').strip('[').strip(']').split(',') 
-            print('These are the input URLs',self.URLs )
-            self.threads = np.int( kwargs.pop('threads') )
+            if 'start_urls' in kwargs:
+                self.URLs = kwargs.pop('start_urls').strip('"').strip('[').strip(']').split(',') 
+                print('These are the input URLs',self.URLs )
+            if 'threads' in kwargs:
+                self.threads = np.int( kwargs.pop('threads') )
     def start_requests(self):
         for url in self.URLs :
             yield scrapy.Request(url=url, 
