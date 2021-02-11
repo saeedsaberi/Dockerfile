@@ -1,4 +1,4 @@
-# Docker Scrapyd Scrapy Crawler - Mailan-Spider App
+# Docker Scrapyd Scrapy Crawler - ssaberi-Spider App
 
 This repository is a spider Python application that can be "Dockerized".
 It comes with a step-by-step guide on "Dockerizing" a Python application in Mac OS X. You will learn about Scrapy, Scrapd, Docker, and Boot2Docker.
