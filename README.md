@@ -13,7 +13,6 @@ $ git clone https://github.com/saeedsaberi/Dockerfile.git
 ```
 
 
-```bash
 
 This will download the repo. now we should build the image and run it:
 
