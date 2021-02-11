@@ -10,6 +10,8 @@ The mailan-spider app will be distributed as a docker image.
 Assuming you have docker installed and configured, run this command to download the image and launch a new container running the spider crawler.
 ```bash
 $ git clone https://github.com/saeedsaberi/Dockerfile.git
+```
+
 
 ```bash
 
