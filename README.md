@@ -59,8 +59,6 @@ What is ... ?
 
 * Scrapy
  * a framework that allows you to easily crawl web pages and extract desired information.
-* Scrapyd
- * an application that allows you to manage your spiders.
  * Because Scrapyd lets you deploy your spider projects via a JSON api, you can run scrapy on a different machine than the one you are running.
  * Lets you schedule your crawls, and even comes with a web UI to see all crawls and data responses.
 * Docker
